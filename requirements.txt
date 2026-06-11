@@ -1,0 +1,18 @@
+# Pipeline de détection de fraude — dépendances Python
+
+# API & HTTP
+requests>=2.31.0
+
+# Base de données
+psycopg2-binary>=2.9.9
+
+# Machine Learning
+scikit-learn>=1.4.0
+numpy>=1.26.0
+pandas>=2.2.0
+
+# Planification
+schedule>=1.2.1
+
+# Configuration
+python-dotenv>=1.0.0
