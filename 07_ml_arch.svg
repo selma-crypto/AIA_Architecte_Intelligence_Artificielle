@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="960" height="680"
+     viewBox="0 0 960 680">
+  <title>Stripe — Architecture ML Platform</title>
+<defs>
+  <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#2C3E50"/>
+  </marker>
+  <marker id="arr_w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#FFFFFF"/>
+  </marker>
+  <marker id="arr_acc" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#4A6FA5"/>
+  </marker>
+</defs>
+  <rect width="960" height="680" fill="#FFFFFF"/>
+<rect x="0" y="0" width="960" height="36" fill="#1A1A2E" stroke="#B0B8C1" stroke-width="1"/>
+<text x="480" y="18" font-size="13" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">STRATÉGIE D'INTÉGRATION MACHINE LEARNING — Vertex AI + MLflow</text>
+<rect x="20" y="44" width="920" height="70" fill="#EEF2F7" stroke="#1A1A2E" stroke-width="1" rx="3"/>
+<text x="480" y="57" font-size="9" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">CAS D'USAGE ML</text>
+<rect x="30" y="65" width="295" height="42" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1" rx="2"/>
+<text x="178" y="79" font-size="9" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Détection fraude temps réel</text>
+<text x="178" y="93" font-size="8" fill="#0F3460" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">XGBoost + LightGBM + Neural Net ensemble</text>
+<text x="178" y="105" font-size="7.5" fill="#4A6FA5" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Latence: &lt; 50ms / Quotidien</text>
+<rect x="337" y="65" width="295" height="42" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1" rx="2"/>
+<text x="485" y="79" font-size="9" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Personnalisation client</text>
+<text x="485" y="93" font-size="8" fill="#0F3460" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Filtrage collaboratif + BERT embeddings</text>
+<text x="485" y="105" font-size="7.5" fill="#4A6FA5" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Latence: &lt; 100ms / Hebdo</text>
+<rect x="644" y="65" width="295" height="42" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1" rx="2"/>
+<text x="792" y="79" font-size="9" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Churn prédictif / LTV</text>
+<text x="792" y="93" font-size="8" fill="#0F3460" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Gradient Boosted Trees</text>
+<text x="792" y="105" font-size="7.5" fill="#4A6FA5" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Latence: Batch / Mensuel</text>
+<rect x="20" y="128" width="250" height="200" fill="#F0F4F8" stroke="#0F3460" stroke-width="1.5" rx="3"/>
+<text x="145" y="142" font-size="9" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">FEATURE ENGINEERING</text>
+<rect x="32" y="154" width="230" height="60" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="30" y="152" width="230" height="22" fill="#0F3460" stroke="#B0B8C1" stroke-width="1"/>
+<text x="145.0" y="163.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">MongoDB ml_features</text>
+<rect x="30" y="174" width="230" height="38" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="38" y="183.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Vecteurs features pré-calculés</text>
+<text x="38" y="193.0" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Historique client 24h/7j/30j</text>
+<text x="38" y="202.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Features comportementales</text>
+<rect x="32" y="222" width="230" height="50" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="30" y="220" width="230" height="22" fill="#0F3460" stroke="#B0B8C1" stroke-width="1"/>
+<text x="145.0" y="231.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Redis Velocity Cache</text>
+<rect x="30" y="242" width="230" height="28" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="38" y="249.0" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– txn_count_1h (sub-ms)</text>
+<text x="38" y="256.0" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– volume_usd_1h</text>
+<text x="38" y="263.0" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– distinct_merchants_24h</text>
+<rect x="32" y="280" width="230" height="42" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="30" y="278" width="230" height="22" fill="#0F3460" stroke="#B0B8C1" stroke-width="1"/>
+<text x="145.0" y="289.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Sessions MongoDB</text>
+<rect x="30" y="300" width="230" height="20" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="38" y="306.6666666666667" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Risk signals comportementaux</text>
+<text x="38" y="313.3333333333333" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Typing rhythm, copy-paste</text>
+<line x1="270" y1="225" x2="305" y2="225" stroke="#2C3E50" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="256.1875" y="207" width="61.62500000000001" height="14" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="0.5" rx="2"/>
+<text x="287" y="215" font-size="7.5" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Feature reads</text>
+<rect x="305" y="128" width="280" height="200" fill="#F0F4F8" stroke="#0F3460" stroke-width="1.5" rx="3"/>
+<text x="445" y="142" font-size="9" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">PIPELINE D'ENTRAÎNEMENT</text>
+<rect x="317" y="154" width="260" height="168" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="315" y="152" width="260" height="22" fill="#16213E" stroke="#B0B8C1" stroke-width="1"/>
+<text x="445.0" y="163.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Vertex AI Training Pipeline</text>
+<rect x="315" y="174" width="260" height="146" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="323" y="188.6" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">① Extraction BigQuery Feature Store</text>
+<text x="323" y="203.2" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">② Génération des labels</text>
+<text x="323" y="217.8" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">③ Split train/val/test</text>
+<text x="323" y="232.4" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">④ Hyperparameter tuning (Optuna)</text>
+<text x="323" y="247.0" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">⑤ Évaluation modèle</text>
+<text x="323" y="261.6" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">   (AUC, Precision, Recall, KS)</text>
+<text x="323" y="276.2" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif"/>
+<text x="323" y="290.8" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">LightGBM · XGBoost · BERT</text>
+<text x="323" y="305.4" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">scale_pos_weight (déséquilibre)</text>
+<line x1="585" y1="225" x2="620" y2="225" stroke="#2C3E50" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="581.5" y="207" width="41.0" height="14" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="0.5" rx="2"/>
+<text x="602" y="215" font-size="7.5" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Register</text>
+<rect x="620" y="128" width="250" height="200" fill="#F0F4F8" stroke="#0F3460" stroke-width="1.5" rx="3"/>
+<text x="745" y="142" font-size="9" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">MODEL REGISTRY</text>
+<rect x="632" y="154" width="230" height="80" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="630" y="152" width="230" height="22" fill="#16213E" stroke="#B0B8C1" stroke-width="1"/>
+<text x="745.0" y="163.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">MLflow Model Registry</text>
+<rect x="630" y="174" width="230" height="58" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="638" y="185.6" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">fraud_detector: v1, v2, v2.3</text>
+<text x="638" y="197.2" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">personalizer: v1, v2</text>
+<text x="638" y="208.8" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">churn_predictor: v1</text>
+<text x="638" y="220.4" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Stage: Staging → Production</text>
+<rect x="632" y="242" width="230" height="58" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="630" y="240" width="230" height="22" fill="#0F3460" stroke="#B0B8C1" stroke-width="1"/>
+<text x="745.0" y="251.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Métadonnées</text>
+<rect x="630" y="262" width="230" height="36" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="638" y="269.2" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Métriques (AUC, PR-AUC)</text>
+<text x="638" y="276.4" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Hash données entraînement</text>
+<text x="638" y="283.6" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Score dérive</text>
+<text x="638" y="290.8" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Valeurs SHAP</text>
+<line x1="745" y1="328" x2="745" y2="360" stroke="#2C3E50" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="743.625" y="336" width="32.75" height="14" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="0.5" rx="2"/>
+<text x="760" y="344" font-size="7.5" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Deploy</text>
+<rect x="305" y="360" width="570" height="130" fill="#EEF2F7" stroke="#1A1A2E" stroke-width="1.5" rx="3"/>
+<text x="590" y="374" font-size="9" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">SERVING TEMPS RÉEL</text>
+<rect x="317" y="385" width="260" height="97" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="315" y="383" width="260" height="22" fill="#1A1A2E" stroke="#B0B8C1" stroke-width="1"/>
+<text x="445.0" y="394.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Vertex AI Endpoints / Seldon</text>
+<rect x="315" y="405" width="260" height="75" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="323" y="417.5" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">fraud_detector_v2.3</text>
+<text x="323" y="430.0" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– REST microservice &lt; 50ms p99</text>
+<text x="323" y="442.5" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Canary: 10% / 90%</text>
+<text x="323" y="455.0" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Auto-scaling</text>
+<text x="323" y="467.5" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– SHAP explainability</text>
+<rect x="592" y="385" width="275" height="97" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="590" y="383" width="275" height="22" fill="#1A1A2E" stroke="#B0B8C1" stroke-width="1"/>
+<text x="727.5" y="394.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Décision API</text>
+<rect x="590" y="405" width="275" height="75" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="598" y="417.5" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Approve   : prob &lt; 0.30</text>
+<text x="598" y="430.0" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Review    : prob 0.30 – 0.70</text>
+<text x="598" y="442.5" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Soft decline: prob 0.70 – 0.90</text>
+<text x="598" y="455.0" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Decline   : prob &gt;= 0.90</text>
+<text x="598" y="467.5" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">→ top_risk_factors (SHAP)</text>
+<line x1="145" y1="328" x2="145" y2="440" stroke="#2C3E50" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+<line x1="145" y1="440" x2="315" y2="440" stroke="#2C3E50" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+<rect x="188.875" y="424" width="82.25" height="14" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="0.5" rx="2"/>
+<text x="230" y="432" font-size="7.5" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Features inférence</text>
+<rect x="20" y="360" width="270" height="130" fill="#F0F4F8" stroke="#0F3460" stroke-width="1.5" rx="3"/>
+<text x="155" y="374" font-size="9" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">MONITORING &amp; DÉRIVE</text>
+<rect x="32" y="385" width="250" height="97" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="30" y="383" width="250" height="22" fill="#16213E" stroke="#B0B8C1" stroke-width="1"/>
+<text x="155.0" y="394.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Evidently + Airflow (daily)</text>
+<rect x="30" y="405" width="250" height="75" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="38" y="417.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– AUC vs baseline (seuil: 0.92)</text>
+<text x="38" y="430.0" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– DataDrift preset</text>
+<text x="38" y="442.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– ClassificationPreset</text>
+<text x="38" y="455.0" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Trigger auto-retrain si dérive</text>
+<text x="38" y="467.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Stockage résultats MongoDB</text>
+<rect x="20" y="508" width="920" height="148" fill="#EEF2F7" stroke="#1A1A2E" stroke-width="1" rx="3"/>
+<text x="480" y="521" font-size="10" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">GOUVERNANCE ML</text>
+<rect x="30" y="533" width="290" height="48" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1" rx="2"/>
+<text x="40" y="547" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Versionnement</text>
+<text x="40" y="561" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">MLflow Registry avec portes de stage →</text>
+<text x="40" y="573" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">(Staging Production)</text>
+<rect x="337" y="533" width="290" height="48" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1" rx="2"/>
+<text x="347" y="547" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Tests A/B</text>
+<text x="347" y="561" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Canary: 10% trafic vers nouveau modèle,</text>
+<text x="347" y="573" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">48h avant déploiement complet</text>
+<rect x="644" y="533" width="290" height="48" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1" rx="2"/>
+<text x="654" y="547" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Explicabilité</text>
+<text x="654" y="561" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Valeurs SHAP par prédiction — stockées</text>
+<text x="654" y="573" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">dans ml_features.model_prediction</text>
+<rect x="30" y="588" width="290" height="48" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1" rx="2"/>
+<text x="40" y="602" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Equité</text>
+<text x="40" y="616" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Distribution fraude/démographies — audit</text>
+<text x="40" y="628" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">mensuel</text>
+<rect x="337" y="588" width="290" height="48" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1" rx="2"/>
+<text x="347" y="602" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Trigger retrain</text>
+<text x="347" y="616" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Automatique: AUC &lt; 0.92 OU dérive |</text>
+<text x="347" y="628" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">détectée Manuel: on-demand Airflow</text>
+<rect x="644" y="588" width="290" height="48" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1" rx="2"/>
+<text x="654" y="602" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Conformité</text>
+<text x="654" y="616" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Toutes décisions loguées audit_log pour</text>
+<text x="654" y="628" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">revue réglementaire</text>
+</svg>

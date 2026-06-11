@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="900" height="720"
+     viewBox="0 0 900 720">
+  <title>Stripe — Architecture Unifiée</title>
+<defs>
+  <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#2C3E50"/>
+  </marker>
+  <marker id="arr_w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#FFFFFF"/>
+  </marker>
+  <marker id="arr_acc" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#4A6FA5"/>
+  </marker>
+</defs>
+  <rect width="900" height="720" fill="#FFFFFF"/>
+<rect x="0" y="0" width="900" height="40" fill="#1A1A2E" stroke="#B0B8C1" stroke-width="1"/>
+<text x="450" y="20" font-size="14" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">STRIPE — ARCHITECTURE UNIFIÉE DES DONNÉES</text>
+<g id="sources" inkscape:label="Sources">
+<rect x="20" y="50" width="860" height="85" fill="#F0F4F8" stroke="#4A6FA5" stroke-width="1" rx="3"/>
+<text x="450" y="65" font-size="9" fill="#4A6FA5" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">SOURCES DE DONNÉES</text>
+<rect x="42" y="74" width="190" height="52" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="40" y="72" width="190" height="22" fill="#4A6FA5" stroke="#B0B8C1" stroke-width="1"/>
+<text x="135.0" y="83.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Web / App</text>
+<rect x="40" y="94" width="190" height="30" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="48" y="109.0" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">checkout pages</text>
+<rect x="257" y="74" width="190" height="52" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="255" y="72" width="190" height="22" fill="#4A6FA5" stroke="#B0B8C1" stroke-width="1"/>
+<text x="350.0" y="83.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Mobile SDK</text>
+<rect x="255" y="94" width="190" height="30" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="263" y="109.0" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">iOS, Android</text>
+<rect x="472" y="74" width="190" height="52" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="470" y="72" width="190" height="22" fill="#4A6FA5" stroke="#B0B8C1" stroke-width="1"/>
+<text x="565.0" y="83.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">APIs Partenaires</text>
+<rect x="470" y="94" width="190" height="30" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="478" y="109.0" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">FX, KYC, Geo</text>
+<rect x="687" y="74" width="190" height="52" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="685" y="72" width="190" height="22" fill="#4A6FA5" stroke="#B0B8C1" stroke-width="1"/>
+<text x="780.0" y="83.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Admin Interne</text>
+<rect x="685" y="94" width="190" height="30" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="693" y="109.0" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">outils internes</text>
+</g>
+<line x1="135" y1="125" x2="135" y2="148" stroke="#2C3E50" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="350" y1="125" x2="350" y2="148" stroke="#2C3E50" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="565" y1="125" x2="565" y2="148" stroke="#2C3E50" stroke-width="1.2" marker-end="url(#arr)"/>
+<line x1="780" y1="125" x2="780" y2="148" stroke="#2C3E50" stroke-width="1.2" marker-end="url(#arr)"/>
+<g id="ingestion" inkscape:label="Ingestion Layer">
+<rect x="20" y="148" width="860" height="68" fill="#EEF2F7" stroke="#4A6FA5" stroke-width="1" rx="3"/>
+<text x="450" y="161" font-size="9" fill="#4A6FA5" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">COUCHE D'INGESTION</text>
+<rect x="42" y="170" width="190" height="40" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="40" y="168" width="190" height="22" fill="#16213E" stroke="#B0B8C1" stroke-width="1"/>
+<text x="135.0" y="179.0" font-size="9.5" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Stripe API v3</text>
+<rect x="40" y="190" width="190" height="18" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="48" y="199.0" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Paiements</text>
+<rect x="257" y="170" width="190" height="40" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="255" y="168" width="190" height="22" fill="#16213E" stroke="#B0B8C1" stroke-width="1"/>
+<text x="350.0" y="179.0" font-size="9.5" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Segment / Snowplow</text>
+<rect x="255" y="190" width="190" height="18" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="263" y="199.0" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Clickstream</text>
+<rect x="472" y="170" width="190" height="40" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="470" y="168" width="190" height="22" fill="#16213E" stroke="#B0B8C1" stroke-width="1"/>
+<text x="565.0" y="179.0" font-size="9.5" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Airbyte</text>
+<rect x="470" y="190" width="190" height="18" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="478" y="199.0" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Batch ELT partenaires</text>
+<rect x="687" y="170" width="190" height="40" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="685" y="168" width="190" height="22" fill="#16213E" stroke="#B0B8C1" stroke-width="1"/>
+<text x="780.0" y="179.0" font-size="9.5" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Debezium CDC</text>
+<rect x="685" y="190" width="190" height="18" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="693" y="199.0" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Change Data Capture</text>
+</g>
+<line x1="450" y1="217" x2="450" y2="237" stroke="#2C3E50" stroke-width="1.5" marker-end="url(#arr)"/>
+<g id="oltp" inkscape:label="OLTP PostgreSQL">
+<rect x="20" y="237" width="860" height="85" fill="#EEF2F7" stroke="#1A1A2E" stroke-width="1.5" rx="3"/>
+<text x="450" y="250" font-size="10" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">COUCHE TRANSACTIONNELLE (OLTP)  —  PostgreSQL 16</text>
+<rect x="32" y="258" width="100" height="24" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="0.8" rx="2"/>
+<text x="82" y="270" font-size="8" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">transaction</text>
+<rect x="139" y="258" width="100" height="24" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="0.8" rx="2"/>
+<text x="189" y="270" font-size="8" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">customer</text>
+<rect x="246" y="258" width="100" height="24" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="0.8" rx="2"/>
+<text x="296" y="270" font-size="8" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">merchant</text>
+<rect x="353" y="258" width="100" height="24" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="0.8" rx="2"/>
+<text x="403" y="270" font-size="8" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">payment_method</text>
+<rect x="460" y="258" width="100" height="24" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="0.8" rx="2"/>
+<text x="510" y="270" font-size="8" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">fraud_indicator</text>
+<rect x="567" y="258" width="100" height="24" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="0.8" rx="2"/>
+<text x="617" y="270" font-size="8" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">refund / chargeback</text>
+<rect x="674" y="258" width="100" height="24" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="0.8" rx="2"/>
+<text x="724" y="270" font-size="8" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">subscription</text>
+<rect x="781" y="258" width="100" height="24" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="0.8" rx="2"/>
+<text x="831" y="270" font-size="8" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">audit_log</text>
+<text x="450" y="312" font-size="8" fill="#2C3E50" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">HA: Primary + 2 Read Replicas  |  RPO: 5min  |  RTO: 30s  |  Patroni / pgBouncer</text>
+</g>
+<line x1="450" y1="323" x2="450" y2="343" stroke="#2C3E50" stroke-width="1.5" marker-end="url(#arr)"/>
+<g id="kafka" inkscape:label="Apache Kafka">
+<rect x="20" y="343" width="860" height="58" fill="#0F3460" stroke="#1A1A2E" stroke-width="1.5" rx="3"/>
+<text x="450" y="358" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">APACHE KAFKA  (Confluent Cloud)</text>
+<text x="450" y="376" font-size="8.5" fill="#B0C4DE" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Topics: transactions | customers | merchants | fraud_signals | sessions | logs | fx_rates</text>
+<text x="450" y="392" font-size="8" fill="#8AA8C8" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Schema Registry (Avro)  |  Rétention: 14 jours  |  32 partitions/topic</text>
+</g>
+<line x1="165" y1="402" x2="165" y2="422" stroke="#2C3E50" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="450" y1="402" x2="450" y2="422" stroke="#2C3E50" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="735" y1="402" x2="735" y2="422" stroke="#2C3E50" stroke-width="1.5" marker-end="url(#arr)"/>
+<g id="speed" inkscape:label="Speed Layer">
+<rect x="20" y="422" width="280" height="130" fill="#EEF2F7" stroke="#1A1A2E" stroke-width="1.2" rx="3"/>
+<text x="160" y="436" font-size="9" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">COUCHE DE VITESSE</text>
+<rect x="32" y="445" width="260" height="99" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="30" y="443" width="260" height="22" fill="#0F3460" stroke="#B0B8C1" stroke-width="1"/>
+<text x="160.0" y="454.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Apache Flink</text>
+<rect x="30" y="465" width="260" height="77" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="38" y="480.4" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Scoring fraude &lt; 50ms</text>
+<text x="38" y="495.8" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Compteurs de vélocité</text>
+<text x="38" y="511.2" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Alertes géo-vélocité</text>
+<text x="38" y="526.6" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Dashboard fraude live</text>
+</g>
+<g id="batch" inkscape:label="Batch Layer">
+<rect x="310" y="422" width="280" height="130" fill="#EEF2F7" stroke="#1A1A2E" stroke-width="1.2" rx="3"/>
+<text x="450" y="436" font-size="9" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">COUCHE BATCH</text>
+<rect x="322" y="445" width="260" height="99" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="320" y="443" width="260" height="22" fill="#0F3460" stroke="#B0B8C1" stroke-width="1"/>
+<text x="450.0" y="454.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Airflow + dbt Cloud</text>
+<rect x="320" y="465" width="260" height="77" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="328" y="480.4" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Extract OLTP → Staging</text>
+<text x="328" y="495.8" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Transformations dbt</text>
+<text x="328" y="511.2" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Refresh vues matér.</text>
+<text x="328" y="526.6" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Rapports conformité</text>
+</g>
+<g id="nosql_layer" inkscape:label="NoSQL Layer">
+<rect x="600" y="422" width="280" height="130" fill="#EEF2F7" stroke="#1A1A2E" stroke-width="1.2" rx="3"/>
+<text x="740" y="436" font-size="9" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">COUCHE NOSQL</text>
+<rect x="612" y="445" width="260" height="99" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="610" y="443" width="260" height="22" fill="#0F3460" stroke="#B0B8C1" stroke-width="1"/>
+<text x="740.0" y="454.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">MongoDB + Redis + Elasticsearch</text>
+<rect x="610" y="465" width="260" height="77" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="618" y="480.4" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Logs &amp; sessions</text>
+<text x="618" y="495.8" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Features ML</text>
+<text x="618" y="511.2" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Cache vélocité (Redis)</text>
+<text x="618" y="526.6" font-size="9" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">– Recherche full-text (ES)</text>
+</g>
+<line x1="165" y1="553" x2="165" y2="573" stroke="#2C3E50" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="450" y1="553" x2="450" y2="573" stroke="#2C3E50" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="735" y1="553" x2="735" y2="573" stroke="#2C3E50" stroke-width="1.5" marker-end="url(#arr)"/>
+<g id="sinks" inkscape:label="Sinks">
+<rect x="22" y="575" width="280" height="42" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="20" y="573" width="280" height="22" fill="#4A6FA5" stroke="#B0B8C1" stroke-width="1"/>
+<text x="160.0" y="584.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Redis (cache live)</text>
+<rect x="20" y="595" width="280" height="20" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="28" y="605.0" font-size="9.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Signaux fraude · tokens · rate limits</text>
+<rect x="312" y="575" width="280" height="42" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="310" y="573" width="280" height="22" fill="#4A6FA5" stroke="#B0B8C1" stroke-width="1"/>
+<text x="450.0" y="584.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Google BigQuery (DWH)</text>
+<rect x="310" y="595" width="280" height="20" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="318" y="605.0" font-size="9.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">dwh.fact_* · dwh.dim_* · mv_fraud_30d</text>
+<rect x="602" y="575" width="280" height="42" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="600" y="573" width="280" height="22" fill="#4A6FA5" stroke="#B0B8C1" stroke-width="1"/>
+<text x="740.0" y="584.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">MongoDB Atlas</text>
+<rect x="600" y="595" width="280" height="20" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="608" y="605.0" font-size="9.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">logs · sessions · ml_features · feedback</text>
+</g>
+<line x1="450" y1="616" x2="450" y2="636" stroke="#2C3E50" stroke-width="1.5" marker-end="url(#arr)"/>
+<g id="serving" inkscape:label="Serving Layer">
+<rect x="20" y="636" width="860" height="60" fill="#EEF2F7" stroke="#1A1A2E" stroke-width="1.2" rx="3"/>
+<text x="450" y="649" font-size="9" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">COUCHE DE SERVICE</text>
+<rect x="42" y="658" width="190" height="34" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="40" y="656" width="190" height="22" fill="#16213E" stroke="#B0B8C1" stroke-width="1"/>
+<text x="135.0" y="667.0" font-size="9.5" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Looker / Tableau</text>
+<rect x="40" y="678" width="190" height="12" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="48" y="684.0" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Dashboards BI</text>
+<rect x="257" y="658" width="190" height="34" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="255" y="656" width="190" height="22" fill="#16213E" stroke="#B0B8C1" stroke-width="1"/>
+<text x="350.0" y="667.0" font-size="9.5" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">ML Platform</text>
+<rect x="255" y="678" width="190" height="12" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="263" y="684.0" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Vertex AI Endpoints</text>
+<rect x="472" y="658" width="190" height="34" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="470" y="656" width="190" height="22" fill="#16213E" stroke="#B0B8C1" stroke-width="1"/>
+<text x="565.0" y="667.0" font-size="9.5" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">APIs Internes</text>
+<rect x="470" y="678" width="190" height="12" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="478" y="684.0" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Services applicatifs</text>
+<rect x="687" y="658" width="190" height="34" fill="#00000015" stroke="none" stroke-width="1"/>
+<rect x="685" y="656" width="190" height="22" fill="#16213E" stroke="#B0B8C1" stroke-width="1"/>
+<text x="780.0" y="667.0" font-size="9.5" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">Compliance</text>
+<rect x="685" y="678" width="190" height="12" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="693" y="684.0" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">Rapports PDF/XLSX</text>
+</g>
+</svg>

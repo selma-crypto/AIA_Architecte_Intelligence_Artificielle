@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="960" height="720"
+     viewBox="0 0 960 720">
+  <title>Stripe — OLAP Schéma Flocon BigQuery</title>
+<defs>
+  <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#2C3E50"/>
+  </marker>
+  <marker id="arr_w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#FFFFFF"/>
+  </marker>
+  <marker id="arr_acc" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#4A6FA5"/>
+  </marker>
+</defs>
+  <rect width="960" height="720" fill="#FFFFFF"/>
+<rect x="0" y="0" width="960" height="36" fill="#1A1A2E" stroke="#B0B8C1" stroke-width="1"/>
+<text x="480" y="18" font-size="13" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">SCHÉMA OLAP — BigQuery  ·  Snowflake Schema  ·  SCD Type 2</text>
+<g id="fact_transaction" inkscape:label="FACT_TRANSACTION">
+<rect x="362" y="202" width="240" height="336" fill="#00000012" stroke="none" stroke-width="1"/>
+<rect x="360" y="200" width="240" height="26" fill="#1A1A2E" stroke="#1A1A2E" stroke-width="1"/>
+<text x="480.0" y="213.0" font-size="11" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">FACT_TRANSACTION</text>
+<rect x="360" y="226" width="240" height="17" fill="#DFF0FA" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="234.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">PK  transaction_key  BIGSERIAL</text>
+<rect x="360" y="243" width="240" height="17" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="251.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    transaction_id  UUID  UNIQUE</text>
+<rect x="360" y="260" width="240" height="17" fill="#EEF6FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="268.5" font-size="8.5" fill="#0F3460" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">FK  merchant_key  INT</text>
+<rect x="360" y="277" width="240" height="17" fill="#EEF6FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="285.5" font-size="8.5" fill="#0F3460" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">FK  customer_key  INT</text>
+<rect x="360" y="294" width="240" height="17" fill="#EEF6FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="302.5" font-size="8.5" fill="#0F3460" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">FK  date_key  INT</text>
+<rect x="360" y="311" width="240" height="17" fill="#EEF6FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="319.5" font-size="8.5" fill="#0F3460" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">FK  payment_method_key  INT</text>
+<rect x="360" y="328" width="240" height="17" fill="#EEF6FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="336.5" font-size="8.5" fill="#0F3460" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">FK  geo_key  INT</text>
+<rect x="360" y="345" width="240" height="17" fill="#EEF6FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="353.5" font-size="8.5" fill="#0F3460" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">FK  currency_key  INT</text>
+<rect x="360" y="362" width="240" height="17" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="370.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    amount_usd  NUMERIC(18,2)</text>
+<rect x="360" y="379" width="240" height="17" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="387.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    amount_local  NUMERIC(18,2)</text>
+<rect x="360" y="396" width="240" height="17" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="404.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    status  VARCHAR(20)</text>
+<rect x="360" y="413" width="240" height="17" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="421.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    fraud_score  NUMERIC(5,4)</text>
+<rect x="360" y="430" width="240" height="17" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="438.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    is_flagged  BOOLEAN</text>
+<rect x="360" y="447" width="240" height="17" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="455.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    is_refunded  BOOLEAN</text>
+<rect x="360" y="464" width="240" height="17" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="472.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    is_chargebacked  BOOLEAN</text>
+<rect x="360" y="481" width="240" height="17" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="489.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    processing_time_ms  INT</text>
+<rect x="360" y="498" width="240" height="17" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="506.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    initiated_at  TIMESTAMPTZ</text>
+<rect x="360" y="515" width="240" height="17" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="368" y="523.5" font-size="8.5" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    settled_at  TIMESTAMPTZ</text>
+</g>
+<rect x="372" y="50" width="210" height="170" fill="#00000012" stroke="none" stroke-width="1"/>
+<rect x="370" y="48" width="210" height="22" fill="#0F3460" stroke="#B0B8C1" stroke-width="1"/>
+<text x="475.0" y="59.0" font-size="9" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">DIM_DATE</text>
+<rect x="370" y="70" width="210" height="16" fill="#E8F4F8" stroke="#B0B8C1" stroke-width="1"/>
+<text x="376" y="78.0" font-size="8" fill="#0F3460" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">PK  date_key  INT</text>
+<rect x="370" y="86" width="210" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="376" y="94.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    full_date  DATE</text>
+<rect x="370" y="102" width="210" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="376" y="110.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    day_of_week  SMALLINT</text>
+<rect x="370" y="118" width="210" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="376" y="126.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    week_number  SMALLINT</text>
+<rect x="370" y="134" width="210" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="376" y="142.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    month_number  SMALLINT</text>
+<rect x="370" y="150" width="210" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="376" y="158.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    quarter  SMALLINT</text>
+<rect x="370" y="166" width="210" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="376" y="174.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    year  SMALLINT</text>
+<rect x="370" y="182" width="210" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="376" y="190.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    is_weekend  BOOLEAN</text>
+<rect x="370" y="198" width="210" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="376" y="206.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    is_holiday  BOOLEAN</text>
+<rect x="62" y="212" width="210" height="170" fill="#00000012" stroke="none" stroke-width="1"/>
+<rect x="60" y="210" width="210" height="22" fill="#1B4F72" stroke="#B0B8C1" stroke-width="1"/>
+<text x="165.0" y="221.0" font-size="9" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">DIM_MERCHANT ★SCD2</text>
+<rect x="60" y="232" width="210" height="16" fill="#E8F4F8" stroke="#B0B8C1" stroke-width="1"/>
+<text x="66" y="240.0" font-size="8" fill="#0F3460" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">PK  merchant_key  SERIAL</text>
+<rect x="60" y="248" width="210" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="66" y="256.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    merchant_id  UUID  NK</text>
+<rect x="60" y="264" width="210" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="66" y="272.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    business_name</text>
+<rect x="60" y="280" width="210" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="66" y="288.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    industry_code</text>
+<rect x="60" y="296" width="210" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="66" y="304.0" font-size="8" fill="#4A6FA5" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">FK  country_key</text>
+<rect x="60" y="312" width="210" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="66" y="320.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    status</text>
+<rect x="60" y="328" width="210" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="66" y="336.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    effective_from  DATE</text>
+<rect x="60" y="344" width="210" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="66" y="352.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    effective_to  DATE</text>
+<rect x="60" y="360" width="210" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="66" y="368.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    is_current  BOOLEAN</text>
+<rect x="692" y="212" width="210" height="186" fill="#00000012" stroke="none" stroke-width="1"/>
+<rect x="690" y="210" width="210" height="22" fill="#1B4F72" stroke="#B0B8C1" stroke-width="1"/>
+<text x="795.0" y="221.0" font-size="9" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">DIM_CUSTOMER ★SCD2</text>
+<rect x="690" y="232" width="210" height="16" fill="#E8F4F8" stroke="#B0B8C1" stroke-width="1"/>
+<text x="696" y="240.0" font-size="8" fill="#0F3460" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">PK  customer_key  SERIAL</text>
+<rect x="690" y="248" width="210" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="696" y="256.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    customer_id  UUID  NK</text>
+<rect x="690" y="264" width="210" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="696" y="272.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    customer_name</text>
+<rect x="690" y="280" width="210" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="696" y="288.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    email</text>
+<rect x="690" y="296" width="210" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="696" y="304.0" font-size="8" fill="#4A6FA5" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">FK  country_key</text>
+<rect x="690" y="312" width="210" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="696" y="320.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    kyc_status</text>
+<rect x="690" y="328" width="210" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="696" y="336.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    risk_tier  SMALLINT</text>
+<rect x="690" y="344" width="210" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="696" y="352.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    effective_from  DATE</text>
+<rect x="690" y="360" width="210" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="696" y="368.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    effective_to  DATE</text>
+<rect x="690" y="376" width="210" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="696" y="384.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    is_current  BOOLEAN</text>
+<rect x="132" y="442" width="200" height="106" fill="#00000012" stroke="none" stroke-width="1"/>
+<rect x="130" y="440" width="200" height="22" fill="#0F3460" stroke="#B0B8C1" stroke-width="1"/>
+<text x="230.0" y="451.0" font-size="9" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">DIM_COUNTRY  (partagée)</text>
+<rect x="130" y="462" width="200" height="16" fill="#E8F4F8" stroke="#B0B8C1" stroke-width="1"/>
+<text x="136" y="470.0" font-size="8" fill="#0F3460" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">PK  country_key  SERIAL</text>
+<rect x="130" y="478" width="200" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="136" y="486.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    country_code  CHAR(2)</text>
+<rect x="130" y="494" width="200" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="136" y="502.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    country_name</text>
+<rect x="130" y="510" width="200" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="136" y="518.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    region</text>
+<rect x="130" y="526" width="200" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="136" y="534.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    gdpr_applicable  BOOLEAN</text>
+<rect x="32" y="582" width="195" height="90" fill="#00000012" stroke="none" stroke-width="1"/>
+<rect x="30" y="580" width="195" height="22" fill="#0F3460" stroke="#B0B8C1" stroke-width="1"/>
+<text x="127.5" y="591.0" font-size="9" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">DIM_PAYMENT_METHOD</text>
+<rect x="30" y="602" width="195" height="16" fill="#E8F4F8" stroke="#B0B8C1" stroke-width="1"/>
+<text x="36" y="610.0" font-size="8" fill="#0F3460" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">PK  method_key  SERIAL</text>
+<rect x="30" y="618" width="195" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="36" y="626.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    type  VARCHAR(30)</text>
+<rect x="30" y="634" width="195" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="36" y="642.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    provider  VARCHAR(50)</text>
+<rect x="30" y="650" width="195" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="36" y="658.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    category  VARCHAR(30)</text>
+<rect x="362" y="582" width="195" height="90" fill="#00000012" stroke="none" stroke-width="1"/>
+<rect x="360" y="580" width="195" height="22" fill="#0F3460" stroke="#B0B8C1" stroke-width="1"/>
+<text x="457.5" y="591.0" font-size="9" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">DIM_GEOGRAPHY</text>
+<rect x="360" y="602" width="195" height="16" fill="#E8F4F8" stroke="#B0B8C1" stroke-width="1"/>
+<text x="366" y="610.0" font-size="8" fill="#0F3460" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">PK  geo_key  SERIAL</text>
+<rect x="360" y="618" width="195" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="366" y="626.0" font-size="8" fill="#4A6FA5" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">FK  country_key  INT</text>
+<rect x="360" y="634" width="195" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="366" y="642.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    region  VARCHAR(100)</text>
+<rect x="360" y="650" width="195" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="366" y="658.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    city  VARCHAR(100)</text>
+<rect x="702" y="582" width="195" height="106" fill="#00000012" stroke="none" stroke-width="1"/>
+<rect x="700" y="580" width="195" height="22" fill="#0F3460" stroke="#B0B8C1" stroke-width="1"/>
+<text x="797.5" y="591.0" font-size="9" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">DIM_CURRENCY</text>
+<rect x="700" y="602" width="195" height="16" fill="#E8F4F8" stroke="#B0B8C1" stroke-width="1"/>
+<text x="706" y="610.0" font-size="8" fill="#0F3460" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">PK  currency_key  SERIAL</text>
+<rect x="700" y="618" width="195" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="706" y="626.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    currency_code  CHAR(3)</text>
+<rect x="700" y="634" width="195" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="706" y="642.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    symbol  VARCHAR(5)</text>
+<rect x="700" y="650" width="195" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="706" y="658.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    usd_rate  NUMERIC(12,6)</text>
+<rect x="700" y="666" width="195" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="706" y="674.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    rate_date  DATE</text>
+<rect x="562" y="442" width="220" height="218" fill="#00000012" stroke="none" stroke-width="1"/>
+<rect x="560" y="440" width="220" height="22" fill="#0F3460" stroke="#B0B8C1" stroke-width="1"/>
+<text x="670.0" y="451.0" font-size="9" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="bold">FACT_DAILY_MERCHANT_SUMMARY</text>
+<rect x="560" y="462" width="220" height="16" fill="#E8F4F8" stroke="#B0B8C1" stroke-width="1"/>
+<text x="566" y="470.0" font-size="8" fill="#0F3460" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">PK  summary_key  BIGSERIAL</text>
+<rect x="560" y="478" width="220" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="566" y="486.0" font-size="8" fill="#4A6FA5" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">FK  merchant_key  INT</text>
+<rect x="560" y="494" width="220" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="566" y="502.0" font-size="8" fill="#4A6FA5" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">FK  date_key  INT</text>
+<rect x="560" y="510" width="220" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="566" y="518.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    total_transactions  INT</text>
+<rect x="560" y="526" width="220" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="566" y="534.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    total_volume_usd  NUMERIC</text>
+<rect x="560" y="542" width="220" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="566" y="550.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    successful_count  INT</text>
+<rect x="560" y="558" width="220" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="566" y="566.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    failed_count  INT</text>
+<rect x="560" y="574" width="220" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="566" y="582.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    refund_count  INT</text>
+<rect x="560" y="590" width="220" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="566" y="598.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    chargeback_count  INT</text>
+<rect x="560" y="606" width="220" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="566" y="614.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    fraud_flagged_count  INT</text>
+<rect x="560" y="622" width="220" height="16" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="1"/>
+<text x="566" y="630.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    avg_fraud_score  NUMERIC</text>
+<rect x="560" y="638" width="220" height="16" fill="#F7F9FB" stroke="#B0B8C1" stroke-width="1"/>
+<text x="566" y="646.0" font-size="8" fill="#1A1A2E" text-anchor="start" dominant-baseline="middle" font-family="Courier New, monospace">    avg_processing_time_ms  INT</text>
+<line x1="475" y1="165" x2="475" y2="200" stroke="#2C3E50" stroke-width="1.3" marker-end="url(#arr)"/>
+<rect x="463.3125" y="174" width="53.37500000000001" height="14" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="0.5" rx="2"/>
+<text x="490" y="182" font-size="7.5" fill="#4A6FA5" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">FK date_key</text>
+<line x1="270" y1="275" x2="360" y2="275" stroke="#2C3E50" stroke-width="1.3" marker-end="url(#arr)"/>
+<rect x="280.0625" y="257" width="69.875" height="14" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="0.5" rx="2"/>
+<text x="315" y="265" font-size="7.5" fill="#4A6FA5" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">FK merchant_key</text>
+<line x1="690" y1="275" x2="600" y2="275" stroke="#2C3E50" stroke-width="1.3" marker-end="url(#arr)"/>
+<rect x="610.0625" y="257" width="69.875" height="14" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="0.5" rx="2"/>
+<text x="645" y="265" font-size="7.5" fill="#4A6FA5" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">FK customer_key</text>
+<line x1="230" y1="440" x2="200" y2="380" stroke="#2C3E50" stroke-width="1" stroke-dasharray="4 3"/>
+<rect x="178.3125" y="402" width="53.37500000000001" height="14" fill="#FFFFFF" stroke="#B0B8C1" stroke-width="0.5" rx="2"/>
+<text x="205" y="410" font-size="7.5" fill="#4A6FA5" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">country_key</text>
+<line x1="330" y1="450" x2="720" y2="365" stroke="#2C3E50" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="225" y1="580" x2="385" y2="510" stroke="#2C3E50" stroke-width="1.3" marker-end="url(#arr)"/>
+<line x1="457" y1="580" x2="460" y2="510" stroke="#2C3E50" stroke-width="1.3" marker-end="url(#arr)"/>
+<line x1="720" y1="580" x2="570" y2="510" stroke="#2C3E50" stroke-width="1.3" marker-end="url(#arr)"/>
+<rect x="10" y="670" width="250" height="36" fill="#E8ECEF" stroke="#B0B8C1" stroke-width="1" rx="3"/>
+<rect x="16" y="680" width="14" height="14" fill="#1B4F72" stroke="#B0B8C1" stroke-width="1"/>
+<text x="120" y="688" font-size="8.5" fill="#1A1A2E" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif">★SCD2 = Slowly Changing Dimension Type 2</text>
+</svg>
