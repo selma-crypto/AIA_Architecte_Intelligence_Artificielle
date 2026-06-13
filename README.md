@@ -126,7 +126,7 @@ curl -X POST http://localhost:8001/predict \
 |---|---|---|---|
 | Logistic Regression | 0.8949 | 0.2194 | 0.3524 |
 | Random Forest | 0.8578 | 0.6491 | 0.7390 |
-| **XGBoost** ✅ | **0.8321** | **0.7919** | **0.8115** |
+| **XGBoost**  | **0.8321** | **0.7919** | **0.8115** |
 
 > Modèle retenu : **XGBoost** · Optimisation Optuna sur 150 trials
 
