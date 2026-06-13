@@ -1,4 +1,4 @@
-# 🤖 AIA — Architecte en Intelligence Artificielle
+# AIA — Architecte en Intelligence Artificielle
 
 > Certification professionnelle · Projet fil rouge : **Détection de Fraude E-commerce**
 
@@ -6,7 +6,7 @@ Ce dépôt regroupe l'ensemble des travaux réalisés dans le cadre de la certif
 
 ---
 
-## 📁 Structure du dépôt
+## Structure du dépôt
 
 ```
 AIA_Architecte_Intelligence_Artificielle/
@@ -18,7 +18,7 @@ AIA_Architecte_Intelligence_Artificielle/
 
 ---
 
-## 📦 Blocs de compétences
+## Blocs de compétences
 
 ### Bloc 1 — Gouvernance des Données
 Mise en place d'une stratégie de gouvernance des données : identification des sources, qualité, traçabilité et conformité RGPD appliquées au contexte de la détection de fraude.
@@ -38,7 +38,7 @@ Industrialisation complète du modèle avec une stack MLOps de bout en bout.
 
 ---
 
-## 🚀 Bloc 4 — MLOps Pipeline (Détail)
+## Bloc 4 — MLOps Pipeline (Détail)
 
 ### Stack technique
 
@@ -120,7 +120,7 @@ curl -X POST http://localhost:8001/predict \
 
 ---
 
-## 📊 Résultats du modèle
+## Résultats du modèle
 
 | Modèle | Recall (Test) | Precision (Test) | F1-score (Test) |
 |---|---|---|---|
@@ -132,7 +132,7 @@ curl -X POST http://localhost:8001/predict \
 
 ---
 
-## 👤 Auteur
+## Auteur
 
 **Selma** — Candidate à la certification Architecte en Intelligence Artificielle  
 GitHub : [@selma-crypto](https://github.com/selma-crypto)
