@@ -1,0 +1,126 @@
+services:
+
+  # ────────────────────────────────
+  # API FastAPI — port 8001 (8000 occupé par Airbyte)
+  # ────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile.api
+    image: fraud-detection-api:latest
+    container_name: fraud-api
+    restart: unless-stopped
+    ports:
+      - "8001:8000"
+    environment:
+      MODEL_PATH:           /app/fraud_xgb_model.pkl
+      MLFLOW_TRACKING_URI:  http://mlflow:5000        # port interne container
+      MLFLOW_MODEL_NAME:    fraud-xgboost
+      DECISION_THRESHOLD:   "0.30"
+      ALERT_WEBHOOK_URL:    ${ALERT_WEBHOOK_URL:-}
+    volumes:
+      - mlflow_data:/app/mlflow_data
+    depends_on:
+      - mlflow
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+  # ────────────────────────────────
+  # MLflow Tracking — port 5001 (5000 parfois occupé)
+  # Accès : http://localhost:5001
+  # ────────────────────────────────
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.12.2
+    container_name: fraud-mlflow
+    restart: unless-stopped
+    ports:
+      - "5001:5000"
+    volumes:
+      - mlflow_data:/mlflow_data
+    command: >
+      mlflow server
+      --backend-store-uri sqlite:///mlflow_data/mlflow.db
+      --default-artifact-root /mlflow_data/artifacts
+      --host 0.0.0.0
+      --port 5000
+
+  # ────────────────────────────────
+  # Monitoring Scheduler — tourne en continu (toutes les 6h)
+  # ────────────────────────────────
+  monitor-scheduler:
+    build:
+      context: .
+      dockerfile: api/Dockerfile.api
+    image: fraud-detection-api:latest
+    container_name: fraud-monitor-scheduler
+    restart: unless-stopped
+    environment:
+      MLFLOW_TRACKING_URI:     http://mlflow:5000
+      ALERT_WEBHOOK_URL:       ${ALERT_WEBHOOK_URL:-}
+      MONITOR_INTERVAL_HOURS:  "6"
+      AUTO_RETRAIN:            "true"
+      REFERENCE_DATA_PATH:     /app/data/X_test_app_sample.csv
+      NEW_DATA_PATH:           /app/data/new_data.csv
+      REPORTS_DIR:             /app/reports
+      PROJECT_ROOT:            /app
+    volumes:
+      - ./data:/app/data:ro
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+    command: python monitoring/scheduler.py
+    depends_on:
+      - mlflow
+
+  # ────────────────────────────────
+  # Airflow — port 8082  (profil optionnel)
+  # Démarrer avec : docker compose --profile airflow up -d
+  # Login : admin / admin123
+  # ────────────────────────────────
+  airflow:
+    image: apache/airflow:2.9.1-python3.12
+    container_name: fraud-airflow
+    profiles: ["airflow"]
+    restart: unless-stopped
+    ports:
+      - "8082:8080"
+    environment:
+      AIRFLOW__CORE__EXECUTOR:             SequentialExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/airflow.db
+      AIRFLOW__CORE__LOAD_EXAMPLES:        "false"
+      AIRFLOW__WEBSERVER__SECRET_KEY:      ${AIRFLOW_SECRET_KEY:-fraud-mlops-secret}
+      MLFLOW_TRACKING_URI:                 http://mlflow:5000
+      API_BASE_URL:                        http://api:8000
+      PROJECT_ROOT:                        /opt/fraud-detection
+      REFERENCE_DATA_PATH:                 /opt/fraud-detection/data/X_test_app_sample.csv
+      NEW_DATA_PATH:                       /opt/fraud-detection/data/new_data.csv
+      ALERT_WEBHOOK_URL:                   ${ALERT_WEBHOOK_URL:-}
+    volumes:
+      - ./pipeline/airflow_dag.py:/opt/airflow/dags/fraud_detection_mlops_pipeline.py:ro
+      - ./monitoring:/opt/fraud-detection/monitoring:ro
+      - ./pipeline:/opt/fraud-detection/pipeline:ro
+      - ./data:/opt/fraud-detection/data:ro
+      - ./reports:/opt/fraud-detection/reports
+      - airflow_data:/opt/airflow
+    command: >
+      bash -c "
+        pip install xgboost scikit-learn mlflow pandas numpy evidently requests --quiet &&
+        airflow db migrate &&
+        airflow users create --username admin --password admin123
+          --firstname Admin --lastname MLOps --role Admin
+          --email admin@fraud.local 2>/dev/null || true &&
+        airflow scheduler &
+        airflow webserver --port 8080
+      "
+    depends_on:
+      - mlflow
+      - api
+
+volumes:
+  mlflow_data:
+    driver: local
+  airflow_data:
+    driver: local

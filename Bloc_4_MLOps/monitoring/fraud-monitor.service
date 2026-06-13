@@ -1,0 +1,32 @@
+[Unit]
+Description=Fraud Detection — Monitoring Scheduler
+After=network.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=fraud-ml
+Group=fraud-ml
+WorkingDirectory=/opt/fraud-detection
+
+# Variables d'environnement
+Environment="PROJECT_ROOT=/opt/fraud-detection"
+Environment="MLFLOW_TRACKING_URI=sqlite:///mlflow.db"
+Environment="MONITOR_INTERVAL_HOURS=6"
+Environment="AUTO_RETRAIN=true"
+Environment="REFERENCE_DATA_PATH=data/X_test_app_sample.csv"
+Environment="NEW_DATA_PATH=data/new_data.csv"
+Environment="REPORTS_DIR=reports"
+EnvironmentFile=-/opt/fraud-detection/.env
+
+ExecStart=/opt/fraud-detection/.venv/bin/python monitoring/scheduler.py
+Restart=on-failure
+RestartSec=60s
+
+# Logging vers journald
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=fraud-monitor
+
+[Install]
+WantedBy=multi-user.target

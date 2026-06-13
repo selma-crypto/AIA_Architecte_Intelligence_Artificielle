@@ -1,0 +1,70 @@
+2026-06-11 08:32:25,785 | INFO | fraud-monitor-scheduler | Scheduler démarré | intervalle=6h | auto_retrain=True
+2026-06-11 08:32:25,786 | INFO | fraud-monitor-scheduler | Référence: /app/data/X_test_app_sample.csv | Courant: /app/data/new_data.csv
+2026-06-11 08:32:25,789 | INFO | fraud-monitor-scheduler | === Cycle de monitoring #1 ===
+2026-06-11 08:32:32,175 | INFO | fraud-monitor | Monitoring | référence: /app/data/X_test_app_sample.csv | courant: /app/data/X_test_app_sample.csv
+2026-06-11 08:32:32,298 | INFO | fraud-monitor | Référence: (500, 58) | Courant: (500, 58)
+2026-06-11 08:32:46,751 | WARNING | fraud-monitor | Evidently non installé — calcul PSI manuel uniquement.
+2026-06-11 08:32:46,755 | INFO | fraud-monitor | Résultats sauvegardés: /app/reports/monitoring_20260611_083246.json
+2026-06-11 08:32:48,910 | INFO | fraud-monitor | Métriques loguées dans MLflow
+2026-06-11 08:32:48,910 | INFO | fraud-monitor | ============================================================
+2026-06-11 08:32:48,910 | INFO | fraud-monitor | RÉSUMÉ MONITORING
+2026-06-11 08:32:48,911 | INFO | fraud-monitor |   Features surveillées : 31
+2026-06-11 08:32:48,911 | INFO | fraud-monitor |   Features dérivent    : 0
+2026-06-11 08:32:48,911 | INFO | fraud-monitor |   PSI max              : 0.0000
+2026-06-11 08:32:48,911 | INFO | fraud-monitor |   PSI moyen            : 0.0000
+2026-06-11 08:32:48,912 | INFO | fraud-monitor |   Réentraînement requis: ✅ NON
+2026-06-11 08:32:48,912 | INFO | fraud-monitor | ============================================================
+2026-06-11 08:32:48,912 | INFO | fraud-monitor-scheduler | Monitoring OK | psi_max=0.0000 | drifted=0 | retrain=False
+2026-06-11 08:32:48,913 | INFO | fraud-monitor-scheduler | Status | runs=1 | ok=1 | fail=0 | retrains=0 | next_run_in=6h
+2026-06-11 08:32:48,913 | INFO | fraud-monitor-scheduler | Prochain cycle à 2026-06-11 14:32:48 UTC
+2026-06-11 15:12:35,615 | INFO | fraud-monitor-scheduler | === Cycle de monitoring #2 ===
+2026-06-11 15:12:35,665 | INFO | fraud-monitor | Monitoring | référence: /app/data/X_test_app_sample.csv | courant: /app/data/X_test_app_sample.csv
+2026-06-11 15:12:36,072 | INFO | fraud-monitor | Référence: (500, 58) | Courant: (500, 58)
+2026-06-11 15:12:36,186 | WARNING | fraud-monitor | Evidently non installé — calcul PSI manuel uniquement.
+2026-06-11 15:12:36,195 | INFO | fraud-monitor | Résultats sauvegardés: /app/reports/monitoring_20260611_151236.json
+2026-06-11 15:12:37,363 | INFO | fraud-monitor | Métriques loguées dans MLflow
+2026-06-11 15:12:37,364 | INFO | fraud-monitor | ============================================================
+2026-06-11 15:12:37,364 | INFO | fraud-monitor | RÉSUMÉ MONITORING
+2026-06-11 15:12:37,364 | INFO | fraud-monitor |   Features surveillées : 31
+2026-06-11 15:12:37,365 | INFO | fraud-monitor |   Features dérivent    : 0
+2026-06-11 15:12:37,365 | INFO | fraud-monitor |   PSI max              : 0.0000
+2026-06-11 15:12:37,365 | INFO | fraud-monitor |   PSI moyen            : 0.0000
+2026-06-11 15:12:37,365 | INFO | fraud-monitor |   Réentraînement requis: ✅ NON
+2026-06-11 15:12:37,365 | INFO | fraud-monitor | ============================================================
+2026-06-11 15:12:37,369 | INFO | fraud-monitor-scheduler | Monitoring OK | psi_max=0.0000 | drifted=0 | retrain=False
+2026-06-11 15:12:37,370 | INFO | fraud-monitor-scheduler | Status | runs=2 | ok=2 | fail=0 | retrains=0 | next_run_in=6h
+2026-06-11 15:12:37,370 | INFO | fraud-monitor-scheduler | Prochain cycle à 2026-06-11 21:12:37 UTC
+2026-06-11 21:52:38,078 | INFO | fraud-monitor-scheduler | === Cycle de monitoring #3 ===
+2026-06-11 21:52:38,211 | INFO | fraud-monitor | Monitoring | référence: /app/data/X_test_app_sample.csv | courant: /app/data/X_test_app_sample.csv
+2026-06-11 21:52:39,435 | INFO | fraud-monitor | Référence: (500, 58) | Courant: (500, 58)
+2026-06-11 21:52:39,703 | WARNING | fraud-monitor | Evidently non installé — calcul PSI manuel uniquement.
+2026-06-11 21:52:39,724 | INFO | fraud-monitor | Résultats sauvegardés: /app/reports/monitoring_20260611_215239.json
+2026-06-11 21:52:45,250 | INFO | fraud-monitor | Métriques loguées dans MLflow
+2026-06-11 21:52:45,251 | INFO | fraud-monitor | ============================================================
+2026-06-11 21:52:45,255 | INFO | fraud-monitor | RÉSUMÉ MONITORING
+2026-06-11 21:52:45,255 | INFO | fraud-monitor |   Features surveillées : 31
+2026-06-11 21:52:45,255 | INFO | fraud-monitor |   Features dérivent    : 0
+2026-06-11 21:52:45,256 | INFO | fraud-monitor |   PSI max              : 0.0000
+2026-06-11 21:52:45,256 | INFO | fraud-monitor |   PSI moyen            : 0.0000
+2026-06-11 21:52:45,256 | INFO | fraud-monitor |   Réentraînement requis: ✅ NON
+2026-06-11 21:52:45,257 | INFO | fraud-monitor | ============================================================
+2026-06-11 21:52:45,264 | INFO | fraud-monitor-scheduler | Monitoring OK | psi_max=0.0000 | drifted=0 | retrain=False
+2026-06-11 21:52:45,266 | INFO | fraud-monitor-scheduler | Status | runs=3 | ok=3 | fail=0 | retrains=0 | next_run_in=6h
+2026-06-11 21:52:45,267 | INFO | fraud-monitor-scheduler | Prochain cycle à 2026-06-12 03:52:45 UTC
+2026-06-13 07:47:45,144 | INFO | fraud-monitor-scheduler | === Cycle de monitoring #4 ===
+2026-06-13 07:47:45,191 | INFO | fraud-monitor | Monitoring | référence: /app/data/X_test_app_sample.csv | courant: /app/data/X_test_app_sample.csv
+2026-06-13 07:47:45,482 | INFO | fraud-monitor | Référence: (500, 58) | Courant: (500, 58)
+2026-06-13 07:47:45,556 | WARNING | fraud-monitor | Evidently non installé — calcul PSI manuel uniquement.
+2026-06-13 07:47:45,566 | INFO | fraud-monitor | Résultats sauvegardés: /app/reports/monitoring_20260613_074745.json
+2026-06-13 07:47:46,097 | INFO | fraud-monitor | Métriques loguées dans MLflow
+2026-06-13 07:47:46,098 | INFO | fraud-monitor | ============================================================
+2026-06-13 07:47:46,098 | INFO | fraud-monitor | RÉSUMÉ MONITORING
+2026-06-13 07:47:46,098 | INFO | fraud-monitor |   Features surveillées : 31
+2026-06-13 07:47:46,098 | INFO | fraud-monitor |   Features dérivent    : 0
+2026-06-13 07:47:46,099 | INFO | fraud-monitor |   PSI max              : 0.0000
+2026-06-13 07:47:46,099 | INFO | fraud-monitor |   PSI moyen            : 0.0000
+2026-06-13 07:47:46,099 | INFO | fraud-monitor |   Réentraînement requis: ✅ NON
+2026-06-13 07:47:46,100 | INFO | fraud-monitor | ============================================================
+2026-06-13 07:47:46,103 | INFO | fraud-monitor-scheduler | Monitoring OK | psi_max=0.0000 | drifted=0 | retrain=False
+2026-06-13 07:47:46,104 | INFO | fraud-monitor-scheduler | Status | runs=4 | ok=4 | fail=0 | retrains=0 | next_run_in=6h
+2026-06-13 07:47:46,105 | INFO | fraud-monitor-scheduler | Prochain cycle à 2026-06-13 13:47:46 UTC

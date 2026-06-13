@@ -1,0 +1,18 @@
+# API FastAPI — dépendances complètes
+fastapi>=0.110
+uvicorn[standard]>=0.27
+pydantic>=2.0
+httpx>=0.27
+python-multipart>=0.0.9
+
+# ML
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3
+xgboost>=2.0
+joblib>=1.3
+
+# MLflow & monitoring
+mlflow>=2.12
+evidently>=0.4
+requests>=2.31

@@ -1,0 +1,35 @@
+# ============================================================
+# Crontab — Monitoring Fraud Detection
+# ============================================================
+# Installation :
+#   crontab -e
+#   Copier-coller les lignes ci-dessous
+#
+# Variables d'environnement requises (à adapter) :
+#   PROJECT_ROOT, MLFLOW_TRACKING_URI, ALERT_WEBHOOK_URL
+# ============================================================
+
+# Monitoring toutes les 6 heures (00:00, 06:00, 12:00, 18:00 UTC)
+0 */6 * * * cd /opt/fraud-detection && \
+    MLFLOW_TRACKING_URI=sqlite:///mlflow.db \
+    ALERT_WEBHOOK_URL=${ALERT_WEBHOOK_URL} \
+    AUTO_RETRAIN=true \
+    /opt/fraud-detection/.venv/bin/python monitoring/scheduler.py --run-once \
+    >> /var/log/fraud-monitor.log 2>&1
+
+# Monitoring quotidien complet avec rapport (02:00 UTC)
+0 2 * * * cd /opt/fraud-detection && \
+    MLFLOW_TRACKING_URI=sqlite:///mlflow.db \
+    /opt/fraud-detection/.venv/bin/python monitoring/monitor.py \
+    --reference data/X_test_app_sample.csv \
+    --current   data/new_data.csv \
+    --output    reports/ \
+    --threshold 0.10 \
+    >> /var/log/fraud-monitor-daily.log 2>&1
+
+# Nettoyage des rapports de plus de 30 jours (dimanche 03:00 UTC)
+0 3 * * 0 find /opt/fraud-detection/reports -name "*.html" -mtime +30 -delete && \
+           find /opt/fraud-detection/reports -name "*.json" -mtime +30 -delete
+
+# Nettoyage des backups de modèles de plus de 7 jours
+0 4 * * 0 find /opt/fraud-detection -name "fraud_xgb_model.bak.*.pkl" -mtime +7 -delete

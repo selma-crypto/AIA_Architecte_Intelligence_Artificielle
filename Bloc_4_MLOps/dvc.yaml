@@ -1,0 +1,71 @@
+stages:
+
+  # ──────────────────────────────────────────────────────────────
+  # Étape 1 : Préparation des données
+  # ──────────────────────────────────────────────────────────────
+  prepare:
+    cmd: python pipeline/prepare_data.py
+         --input  data/raw/transactions.csv
+         --output data/processed/
+    deps:
+      - pipeline/prepare_data.py
+      - data/raw/transactions.csv
+    outs:
+      - data/processed/X_train.csv
+      - data/processed/X_val.csv
+      - data/processed/X_test.csv
+      - data/processed/y_train.csv
+      - data/processed/y_val.csv
+      - data/processed/y_test.csv
+    params:
+      - params.yaml:
+          - prepare.test_size
+          - prepare.val_size
+          - prepare.random_state
+
+  # ──────────────────────────────────────────────────────────────
+  # Étape 2 : Entraînement du modèle
+  # ──────────────────────────────────────────────────────────────
+  train:
+    cmd: python pipeline/retrain.py
+         --trigger dvc
+         --data-path data/processed/X_train.csv
+    deps:
+      - pipeline/retrain.py
+      - data/processed/X_train.csv
+      - data/processed/y_train.csv
+      - data/processed/X_val.csv
+      - data/processed/y_val.csv
+    outs:
+      - fraud_xgb_model.pkl
+      - reports/train_metrics.json
+    params:
+      - params.yaml:
+          - train.n_estimators
+          - train.max_depth
+          - train.learning_rate
+          - train.decision_threshold
+
+  # ──────────────────────────────────────────────────────────────
+  # Étape 3 : Évaluation
+  # ──────────────────────────────────────────────────────────────
+  evaluate:
+    cmd: python pipeline/validate_model.py
+    deps:
+      - pipeline/validate_model.py
+      - fraud_xgb_model.pkl
+      - data/processed/X_test.csv
+      - data/processed/y_test.csv
+    metrics:
+      - reports/metrics.json:
+          cache: false
+    plots:
+      - reports/confusion_matrix.csv:
+          cache: false
+          x: predicted
+          y: actual
+    params:
+      - params.yaml:
+          - evaluate.min_recall
+          - evaluate.min_precision
+          - evaluate.min_f1

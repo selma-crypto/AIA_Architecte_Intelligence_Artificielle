@@ -1,0 +1,13 @@
+# Fichiers gérés par DVC (ne pas committer dans Git)
+/raw/transactions.csv
+/processed/X_train.csv
+/processed/X_val.csv
+/processed/X_test.csv
+/processed/y_train.csv
+/processed/y_val.csv
+/processed/y_test.csv
+/new_data.csv
+
+# Garder les fichiers de sample (petits, OK dans Git)
+!/X_test_app_sample.csv
+!/y_test_app_sample.csv
